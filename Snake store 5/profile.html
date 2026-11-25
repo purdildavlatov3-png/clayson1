@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Личный кабинет — SNAKE MARKET</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main><section><div class="wrap">
+  <div class="prof">
+    <button class="btn ghost out" id="pLogout" type="button">Выйти</button>
+
+    <div class="p-head">
+      <div class="avatar">
+        <!-- Змеиное кольцо вокруг аватара: рисуется, затем ползёт по кругу -->
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="t" cx="50" cy="50" r="46" pathLength="100"/>
+          <circle class="b" cx="50" cy="50" r="46" pathLength="100"/>
+          <circle class="h" cx="50" cy="50" r="46" pathLength="100"/>
+        </svg>
+        <b id="avL">S</b>
+      </div>
+      <div><h1 id="pName">Профиль</h1><p id="pMail"></p></div>
+    </div>
+
+    <div class="tabs p-tabs">
+      <button type="button" data-t="acc" class="on">Настройки аккаунта</button>
+      <button type="button" data-t="ord">История заказов</button>
+    </div>
+
+    <div class="pane on" id="pane-acc">
+      <form id="profForm" novalidate>
+        <label>Имя пользователя<input name="username" type="text" autocomplete="username" maxlength="24" placeholder="Как к вам обращаться"><small class="err" data-for="username"></small></label>
+        <label>Email<input name="email" type="email" autocomplete="email"><small class="err" data-for="email"></small></label>
+        <p class="sub">Смена пароля (необязательно)</p>
+        <div class="row2">
+          <label>Новый пароль<input name="npw" type="password" autocomplete="new-password" placeholder="Минимум 6 символов"><small class="err" data-for="npw"></small></label>
+          <label>Повторите пароль<input name="npw2" type="password" autocomplete="new-password" placeholder="Ещё раз"><small class="err" data-for="npw2"></small></label>
+        </div>
+        <label>Текущий пароль <span style="color:#555">(нужен при смене email или пароля)</span><input name="cpw" type="password" autocomplete="current-password"><small class="err" data-for="cpw"></small></label>
+        <button class="btn" type="submit">Сохранить изменения</button><span class="ok" id="ok">Изменения сохранены</span>
+      </form>
+    </div>
+
+    <div class="pane" id="pane-ord">
+      <div class="empty-o">
+        <p>У вас пока нет заказов</p>
+        <a class="btn ghost" href="catalog.html">Перейти в каталог</a>
+      </div>
+      <!-- Макет будущей карточки заказа -->
+      <small class="ord-tag">Так будет выглядеть ваш заказ</small>
+      <div class="ord" aria-hidden="true">
+        <div><small>Номер заказа</small><b>SM-000000</b></div>
+        <div><small>Дата</small><b>01.01.2026</b></div>
+        <div><small>Статус</small><span class="chip">В обработке</span></div>
+        <div><small>Сумма</small><b class="price">0 ₽</b></div>
+      </div>
+    </div>
+  </div>
+</div></section></main>
+<script src="script.js"></script>
+</body>
+</html>
